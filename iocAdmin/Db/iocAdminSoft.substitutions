@@ -8,27 +8,27 @@
 #
 file ioc.template
 {
-pattern { IOCNAME , TODFORMAT           }
-	{ "$(IOC)"  , "%m/%d/%Y %H:%M:%S" }
+pattern { IOCNAME, SEP , TODFORMAT           }
+	{ "$(IOC)"  , "\$(SEP=:)", "%m/%d/%Y %H:%M:%S" }
 }
 file iocGeneralTime.template
 {
-pattern { IOCNAME }
-	{ "$(IOC)"  }
+pattern { IOCNAME, SEP }
+	{ "$(IOC)" , "\$(SEP=:)" }
 }
 file iocEnvVar.template
 {
-pattern { IOCNAME, ENVNAME      , ENVVAR                          , ENVTYPE}
-	{ "$(IOC)" , CA_ADDR_LIST , EPICS_CA_ADDR_LIST              , epics  } 
-	{ "$(IOC)" , CA_CONN_TIME , EPICS_CA_CONN_TMO               , epics  } 
-	{ "$(IOC)" , CA_AUTO_ADDR , EPICS_CA_AUTO_ADDR_LIST         , epics  }
-	{ "$(IOC)" , CA_RPTR_PORT , EPICS_CA_REPEATER_PORT          , epics  }
-	{ "$(IOC)" , CA_SRVR_PORT , EPICS_CA_SERVER_PORT            , epics  }
-	{ "$(IOC)" , CA_MAX_ARRAY , EPICS_CA_MAX_ARRAY_BYTES        , epics  }
-	{ "$(IOC)" , CA_SRCH_TIME , EPICS_CA_MAX_SEARCH_PERIOD      , epics  }
-	{ "$(IOC)" , CA_BEAC_TIME , EPICS_CA_BEACON_PERIOD          , epics  }
-	{ "$(IOC)" , TIMEZONE     , EPICS_TIMEZONE                  , epics  }
-	{ "$(IOC)" , TS_NTP_INET  , EPICS_TS_NTP_INET               , epics  }
-	{ "$(IOC)" , IOC_LOG_PORT , EPICS_IOC_LOG_PORT              , epics  }
-	{ "$(IOC)" , IOC_LOG_INET , EPICS_IOC_LOG_INET              , epics  }
+pattern { IOCNAME, SEP, ENVNAME      , ENVVAR                          , ENVTYPE}
+	{ "$(IOC)" , "\$(SEP=:)", CA_ADDR_LIST , EPICS_CA_ADDR_LIST              , epics  } 
+	{ "$(IOC)" , "\$(SEP=:)", CA_CONN_TIME , EPICS_CA_CONN_TMO               , epics  } 
+	{ "$(IOC)" , "\$(SEP=:)", CA_AUTO_ADDR , EPICS_CA_AUTO_ADDR_LIST         , epics  }
+	{ "$(IOC)" , "\$(SEP=:)", CA_RPTR_PORT , EPICS_CA_REPEATER_PORT          , epics  }
+	{ "$(IOC)" , "\$(SEP=:)", CA_SRVR_PORT , EPICS_CA_SERVER_PORT            , epics  }
+	{ "$(IOC)" , "\$(SEP=:)", CA_MAX_ARRAY , EPICS_CA_MAX_ARRAY_BYTES        , epics  }
+	{ "$(IOC)" , "\$(SEP=:)", CA_SRCH_TIME , EPICS_CA_MAX_SEARCH_PERIOD      , epics  }
+	{ "$(IOC)" , "\$(SEP=:)", CA_BEAC_TIME , EPICS_CA_BEACON_PERIOD          , epics  }
+	{ "$(IOC)" , "\$(SEP=:)", TIMEZONE     , EPICS_TIMEZONE                  , epics  }
+	{ "$(IOC)" , "\$(SEP=:)", TS_NTP_INET  , EPICS_TS_NTP_INET               , epics  }
+	{ "$(IOC)" , "\$(SEP=:)", IOC_LOG_PORT , EPICS_IOC_LOG_PORT              , epics  }
+	{ "$(IOC)" , "\$(SEP=:)", IOC_LOG_INET , EPICS_IOC_LOG_INET              , epics  }
 }
